@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json数据格式</title>
+
+  <script type="application/javascript">
+
+    //对象格式
+    //{"属性名称":"值"}
+    var json={
+      "id":1,
+      "name":"班长",
+      "age":3
+    }
+
+    //遇到json属性. 属性
+    console.log(json.id)
+    console.log(json.name)
+
+    //数组格式
+    var jsonArr=[
+      {
+        "id":1,
+        "name":"班长",
+        "age":3
+      },{
+        "id":2,
+        "name":"班长2",
+        "age":6
+      }
+    ]
+
+    //遇到json数组用下标
+    console.log(jsonArr[0].name)
+
+
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>

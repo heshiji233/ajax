@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax入门</title>
+
+
+   <!--引入jquery-->
+   <script type="application/javascript" src="jquery-1.8.3.min.js"></script>
+    <script type="application/javascript">
+
+        function fun1(){
+
+            $.ajax({
+                type: "GET",//请求方式
+                url: "http://localhost:8080/ajax/helloAjax",//请求地址
+                data: "name=John",//请求参数
+                success: function(data){//服务器返回的响应数据
+
+                    //打印服务器放的数据
+                    console.log(data)
+
+                }
+            });
+
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+  <button onclick="fun1()">ajax2调用</button>
+
+</body>
+</html>

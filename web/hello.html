@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax入门</title>
+
+    <script type="application/javascript">
+
+        function fun2(){
+
+            //1.创建ajax引擎
+            var xmlhttp=new XMLHttpRequest();
+
+            //为ajax引擎绑定监听(监听服务器是否将数据响应给ajax引擎)
+            xmlhttp.onreadystatechange=function (){
+
+                // 存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+                // 0: 请求未初始化
+                // 1: 服务器连接已建立
+                // 2: 请求已接收  send(）方法执行完成
+                // 3: 交互，ajax引擎正在解析内容
+                // 4: (完成)响应的内容解析完成，客户端可以调用了
+
+                if(xmlhttp.readyState==4&&xmlhttp.status==200){
+
+                    //通过ajax引擎获取服务器返回的数据
+                    var res=xmlhttp.responseText;
+
+                    console.log(res)
+                }
+
+            }
+
+
+            //绑定请求地址
+            /**
+             * 1.请求方式 get post
+             * 2.请求的地址
+             * 3.是否异步
+             */
+            xmlhttp.open("GET","http://localhost:8080/ajax/helloAjax",true)
+
+            //发送请求
+            xmlhttp.send();
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+  <button onclick="fun2()">ajax1调用</button>
+
+</body>
+</html>
